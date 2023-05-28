@@ -26,5 +26,6 @@ describe('Registration and Authorization test', () => {
       cy.get('[id="loginFrm_password"]').click().type('1488WPZZ');
       cy.get('[title="Login"]').click();
       cy.get('[class="subtext"]').should('have.text', 'Max');
+      
     })
   })
