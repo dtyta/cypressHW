@@ -1,5 +1,5 @@
 describe('Registration and Authorization test', () => {
-    it('Reg&auth test', () => {
+    it('Registration test', () => {
       cy.visit('https://automationteststore.com/');
       cy.get('[id="customer_menu_top"]').click();
       cy.get('[class="fa fa-check fa"]').click();
@@ -21,11 +21,14 @@ describe('Registration and Authorization test', () => {
       cy.get('[id="AccountFrm_newsletter0"]').click();
       cy.get('[type="checkbox"]').click();
       cy.get('[class="btn btn-orange pull-right lock-on-click"]').click();
+    })
+
+      it('Authorization test', () => {
+      cy.visit('https://automationteststore.com/');
       cy.get('[id="customer_menu_top"]').click();
       cy.get('[id="loginFrm_loginname"]').click().type('Tolik1');
       cy.get('[id="loginFrm_password"]').click().type('1488WPZZ');
       cy.get('[title="Login"]').click();
-      cy.get('[class="subtext"]').should('have.text', 'Max');
-      
+      cy.get('[class="subtext"]').should('have.text', 'Max');  
     })
   })
