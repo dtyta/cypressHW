@@ -1,20 +1,20 @@
-pipeline{
+pipeline {
     agent any
-            stages {
-                stage('Build') { 
-                    steps {
-                // 
+    stages {
+        stage('Build') {
+            steps {
+                //
             }
-                }
-                stage('Test') { 
-                    steps {
-                        // 
-                    }
-                }
-                stage('Deploy') { 
-                    steps {
-                        // 
-                    }
-                }
+        }
+        stage('Test') {
+            steps {
+                //
+            }
+        }
+        stage('Deploy') {
+            steps {
+                //
+            }
+        }
     }
 }
