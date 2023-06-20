@@ -1,19 +1,25 @@
-pipeline {
+pipeline{
+
     agent any
+
     stages {
-        stage('Build') {
+        stage('Intall dependencies') { 
             steps {
-                //
+                sh 'npm ci' 
             }
         }
-        stage('Test') {
+        stage('Cypress run') { 
             steps {
-                //
+                sh 'allure:clearData'
+                sh 'cy:testWithAllureReport'
             }
         }
-        stage('Deploy') {
+        stage('Generate Allure report') { 
             steps {
-                //
+                sh 'allure:generateReport'
+                allure(
+                    results: [['allure-results']]
+                )
             }
         }
     }
