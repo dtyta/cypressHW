@@ -1,6 +1,4 @@
 export function requestAuth (){
-    cy.visit('https://automationteststore.com/index.php?rt=account/account');
-    cy.clearAllCookies();
     cy.request('GET', 'https://automationteststore.com/index.php?rt=account/account')
     .then((response) => {
       const body = Cypress.$(response.body); 
